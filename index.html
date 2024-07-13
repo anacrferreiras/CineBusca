@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>CineBusca</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff; 
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-position: center; 
+            text-align: center; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 100px; /* Largura da barra lateral */
+            padding: 40px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background-color: #ffffff; /* Cor de fundo da barra lateral */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sidebar img {
+            max-width: 150%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 40px;
+        }
+        .content {
+            text-align: left; /* Alinhar conteúdo à esquerda */
+            max-width: 800px; /* Largura máxima do conteúdo principal */
+            padding: 20px;
+            margin-left: 120px; /* Largura da barra lateral + margem */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        .genres {
+            margin-top: 20px; /* Espaçamento acima dos gêneros */
+            text-align: center;
+        }
+
+        .genres ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .genres ul li {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 20px 20px; /* Espaçamento interno */
+            border: 2px solid #ffffff; /* Borda ao redor */
+            border-radius: 10px; /* Borda arredondada */
+        }
+
+        .genres ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        .genres a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-size: 60px; /* Tamanho grande para o título principal */
+            margin-top: 100px; /* Espaçamento acima do título */
+            margin-bottom: 20px; /* Espaçamento abaixo do título */
+        }
+
+        main {
+            margin-top: 10px; /* Espaçamento acima do conteúdo principal */
+        }
+
+        .linkedin-link {
+            text-align: right;
+            position: fixed;
+            bottom: 20px; /* Posição do rodapé */
+            right: 20px; /* Distância da direita */
+        }
+
+        .linkedin-link a {
+            color: #f8e6e6;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .linkedin-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <div class="genres">
+            <ul>
+    <li><div href="#" onclick="filterMovies('ação')">AÇÃO</a></li>
+    <li><div href="#" onclick="filterMovies('anime')">ANIME</div></li>
+    <li><div href="#" onclick="filterMovies('comédia')">COMÉDIA</a></li>
+    <li><div href="#" onclick="filterMovies('dorama')">DORAMA</div></li>
+    <li><div href="#" onclick="filterMovies('drama')">DRAMA</div></li>
+    <li><div href="#" onclick="filterMovies('ficção científica')">FICÇÃO CIENTÍFICA</div></li>
+    <li><div href="#" onclick="filterMovies('romance')">ROMANCE</div></li>
+    <li><div href="#" onclick="filterMovies('suspense')">SUSPENSE</div></li>
+    <li><div href="#" onclick="filterMovies('terror')">TERROR</div></li>
+
+            </ul>
+        </div>
+
+        <h1>CineBusca</h1>
+
+        <input type="text" id="searchInput" placeholder="Digite um gênero..."  style="font-size: 20px;">
+        <button onclick="searchMovies()">Buscar</button>
+        <div id="results" class="movie-list"></div>
+
+        <main>
+            <h2>Recomendação Para Você</h2>
+            <label for="userPreference">Descreva sua preferência em filmes:</label>
+            <input type="text" id="userPreference" placeholder="Exemplo: Ação.." style="font-size: 15px;">
+            <button onclick="recommendMovie()">Recomendar Filme</button>
+            <p id="recommendation"></p>
+        </main>
+    </div>
+
+    <!-- Link do LinkedIn -->
+    <div class="linkedin-link">
+        <a href="https://www.linkedin.com/in/ana-ferreira-xx/" target="_blank">Visite meu LinkedIn</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
